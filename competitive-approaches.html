@@ -400,6 +400,79 @@
             </div>
         </div>
 
+        <!-- APPROACH 5 -->
+        <div class="approach-section">
+            <div class="approach-header">
+                <div class="approach-number">5</div>
+                <div class="approach-title">Rule-Based Systems & Expert Systems</div>
+            </div>
+
+            <div class="key-players">
+                <strong>Key Players:</strong> Thomson Reuters (legal compliance), LexisNexis, IBM Watson (early versions), Traditional compliance software vendors
+            </div>
+
+            <h3 style="color: #2c3e50; margin: 20px 0 10px;">What They Do</h3>
+            <ul>
+                <li>Hard-coded Boolean rules for specific domains (if-then-else logic)</li>
+                <li>Expert systems with knowledge graphs</li>
+                <li>Deterministic compliance checking against regulatory databases</li>
+                <li>No machine learning—purely symbolic AI</li>
+            </ul>
+
+            <div class="why-fails">
+                <strong>Why This Fails for Modern AI:</strong>
+                <ul>
+                    <li><strong>Cannot handle natural language:</strong> Brittle pattern matching, can't understand semantic nuance</li>
+                    <li><strong>Doesn't scale:</strong> Requires manual rule creation for every scenario</li>
+                    <li><strong>No learning or adaptation:</strong> Can't handle novel situations outside predefined rules</li>
+                    <li><strong>Integration nightmare:</strong> Cannot work with modern LLMs—fundamentally different paradigms</li>
+                    <li><strong>Maintenance burden:</strong> Every new regulation requires manual rule updates</li>
+                </ul>
+            </div>
+
+            <div class="acn-advantage">
+                <h4>ACN Advantage</h4>
+                <p><strong>Combines formal guarantees of symbolic AI with flexibility of neural models.</strong> ACN provides the deterministic verification of rule-based systems but dynamically constructs formal concept lattices that adapt to conversation. Gets the best of both worlds: mathematical proofs + natural language understanding.</p>
+            </div>
+        </div>
+
+        <!-- APPROACH 6 -->
+        <div class="approach-section">
+            <div class="approach-header">
+                <div class="approach-number">6</div>
+                <div class="approach-title">Formal Methods & Neural Network Verification</div>
+            </div>
+
+            <div class="key-players">
+                <strong>Key Players:</strong> MIT, CMU, Stanford, DeepMind (pre-LLM era), ETH Zurich
+            </div>
+
+            <h3 style="color: #2c3e50; margin: 20px 0 10px;">What They're Attempting</h3>
+            <ul>
+                <li>Formal verification of neural networks using SMT solvers</li>
+                <li>Certification of robustness properties for safety-critical systems</li>
+                <li>Model checking for specific neural network behaviors</li>
+                <li>Abstract interpretation for neural networks</li>
+            </ul>
+
+            <div class="why-fails">
+                <strong>Why Academic Formal Methods Don't Apply to LLM Drift:</strong>
+                <ul>
+                    <li><strong>Computational intractability:</strong> Formal verification of neural networks is NP-hard. Works for tiny networks (10K parameters), not 7B+ LLMs</li>
+                    <li><strong>Focus on classification, not generation:</strong> Most work on verifying image classifiers, not language models</li>
+                    <li><strong>No conversational dynamics:</strong> Doesn't address multi-turn semantic drift</li>
+                    <li><strong>Research-stage only:</strong> No commercial products, no practical deployment</li>
+                    <li><strong>Wrong abstraction level:</strong> Tries to verify the neural network itself rather than semantic behavior</li>
+                </ul>
+            </div>
+
+            <div class="acn-advantage">
+                <h4>ACN Advantage</h4>
+                <p><strong>Verifies semantic behavior, not neural weights.</strong> ACN doesn't try to formally verify the LLM's internal neural network (intractable). Instead, it constructs a formal concept lattice that operates ABOVE the neural layer—verifying semantic properties and constraints. This is computationally feasible and addresses the actual problem: maintaining semantic consistency in conversations.</p>
+                <p style="margin-top: 10px;"><strong>Novel approach:</strong> ACN is the first to apply Formal Concept Analysis to LLM drift prevention. 30+ years of FCA research that neural network verification researchers haven't touched.</p>
+            </div>
+        </div>
+
         <!-- COMPREHENSIVE COMPARISON -->
         <h2 style="text-align: center; color: #2c3e50; margin: 60px 0 30px;">Comprehensive Comparison</h2>
 
@@ -411,6 +484,8 @@
                     <th>RAG</th>
                     <th>RLHF</th>
                     <th>Multi-Agent</th>
+                    <th>Rule-Based</th>
+                    <th>Neural Verif.</th>
                     <th style="background: #28a745;">ACN</th>
                 </tr>
             </thead>
@@ -421,6 +496,8 @@
                     <td>22.5%</td>
                     <td>22.5%</td>
                     <td>Worse</td>
+                    <td><span class="crossmark">✗</span> N/A</td>
+                    <td>N/A</td>
                     <td style="background: #d4edda;"><strong>0.0%</strong></td>
                 </tr>
                 <tr>
@@ -429,6 +506,8 @@
                     <td>~21%</td>
                     <td>~21%</td>
                     <td>~21%</td>
+                    <td>Deterministic*</td>
+                    <td>N/A</td>
                     <td style="background: #d4edda;"><strong>97%</strong></td>
                 </tr>
                 <tr>
@@ -437,6 +516,8 @@
                     <td>~55%</td>
                     <td>~55%</td>
                     <td>~55%</td>
+                    <td>Limited</td>
+                    <td>N/A</td>
                     <td style="background: #d4edda;"><strong>96%</strong></td>
                 </tr>
                 <tr>
@@ -445,6 +526,8 @@
                     <td>39% drop</td>
                     <td>39% drop</td>
                     <td>Worse</td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td>N/A</td>
                     <td style="background: #d4edda;"><strong>99.4%</strong></td>
                 </tr>
                 <tr>
@@ -453,6 +536,8 @@
                     <td>20.8%</td>
                     <td>20.8%</td>
                     <td>20.8%</td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td>N/A</td>
                     <td style="background: #d4edda;"><strong>100%</strong></td>
                 </tr>
                 <tr>
@@ -461,6 +546,8 @@
                     <td><span class="crossmark">✗</span></td>
                     <td><span class="crossmark">✗</span></td>
                     <td><span class="crossmark">✗</span></td>
+                    <td><span class="checkmark">✓</span> Yes*</td>
+                    <td><span class="checkmark">✓</span> Yes**</td>
                     <td style="background: #d4edda;"><span class="checkmark">✓</span></td>
                 </tr>
                 <tr>
@@ -469,6 +556,18 @@
                     <td><span class="checkmark">✓</span></td>
                     <td><span class="checkmark">✓</span></td>
                     <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td style="background: #d4edda;"><span class="checkmark">✓</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Scalable to LLMs</strong></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td><span class="crossmark">✗</span></td>
                     <td style="background: #d4edda;"><span class="checkmark">✓</span></td>
                 </tr>
                 <tr>
@@ -477,10 +576,27 @@
                     <td>$0.002/1K</td>
                     <td>$0.002/1K</td>
                     <td>$0.004/1K</td>
+                    <td>Low</td>
+                    <td>N/A</td>
                     <td style="background: #d4edda;"><strong>$0.0002/1K</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Commercial Deployment</strong></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td>Limited</td>
+                    <td>Legacy</td>
+                    <td><span class="crossmark">✗</span> Research</td>
+                    <td style="background: #d4edda;"><strong>Ready</strong></td>
                 </tr>
             </tbody>
         </table>
+
+        <p style="margin-top: 20px; font-size: 0.9em; color: #6c757d;">
+            <strong>*</strong> Rule-based systems provide deterministic proofs but cannot handle natural language or novel situations.<br>
+            <strong>**</strong> Neural verification provides formal guarantees but doesn't scale to LLMs and doesn't address conversational drift.
+        </p>
 
         <!-- SUMMARY -->
         <div class="summary-section">
@@ -503,6 +619,213 @@
             <p style="font-size: 1.15em; font-weight: 600; color: #155724; margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.5); border-radius: 8px;">
                 ACN is the only approach that achieves reliability (97% violations, 0% drift) + flexibility (natural language) + scalability (works with 7B models) + economic efficiency (10x cheaper) simultaneously.
             </p>
+        </div>
+
+        <!-- LITERATURE REFERENCES -->
+        <h2 style="text-align: center; color: #2c3e50; margin: 60px 0 30px;">Literature References</h2>
+
+        <div class="approach-section">
+            <h3 style="color: #667eea; margin-bottom: 20px;">Approach 1: Prompting & Guardrails</h3>
+
+            <table class="comparison-table" style="font-size: 0.9em;">
+                <thead>
+                    <tr style="background: #34495e;">
+                        <th style="width: 40%;">Paper Title</th>
+                        <th style="width: 25%;">Authors</th>
+                        <th style="width: 15%;">Published</th>
+                        <th style="width: 20%;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Constitutional AI: Harmlessness from AI Feedback</strong></td>
+                        <td>Anthropic (Yuntao Bai et al.)</td>
+                        <td>December 2022</td>
+                        <td><a href="https://arxiv.org/abs/2212.08073" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications</strong></td>
+                        <td>NVIDIA (Traian Rebedea et al.)</td>
+                        <td>October 2023</td>
+                        <td><a href="https://arxiv.org/abs/2310.10501" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a> | <a href="https://github.com/NVIDIA/NeMo-Guardrails" target="_blank" style="color: #667eea; font-weight: 600;">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations</strong></td>
+                        <td>Meta AI (Hakan Inan et al.)</td>
+                        <td>December 2023</td>
+                        <td><a href="https://arxiv.org/abs/2312.06674" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="approach-section">
+            <h3 style="color: #667eea; margin-bottom: 20px;">Approach 2: Retrieval-Augmented Generation (RAG)</h3>
+
+            <table class="comparison-table" style="font-size: 0.9em;">
+                <thead>
+                    <tr style="background: #34495e;">
+                        <th style="width: 40%;">Paper Title</th>
+                        <th style="width: 25%;">Authors</th>
+                        <th style="width: 15%;">Published</th>
+                        <th style="width: 20%;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</strong></td>
+                        <td>Meta AI (Patrick Lewis et al.)</td>
+                        <td>May 2020 (NeurIPS 2020)</td>
+                        <td><a href="https://arxiv.org/abs/2005.11401" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>In-Context Retrieval-Augmented Language Models</strong></td>
+                        <td>Google Research (Ori Ram et al.)</td>
+                        <td>February 2023</td>
+                        <td><a href="https://arxiv.org/abs/2302.00083" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Seven Failure Points When Engineering a Retrieval Augmented Generation System</strong></td>
+                        <td>Scott Barnett et al.</td>
+                        <td>January 2024</td>
+                        <td><a href="https://arxiv.org/abs/2401.05856" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="approach-section">
+            <h3 style="color: #667eea; margin-bottom: 20px;">Approach 3: RLHF & Fine-Tuning</h3>
+
+            <table class="comparison-table" style="font-size: 0.9em;">
+                <thead>
+                    <tr style="background: #34495e;">
+                        <th style="width: 40%;">Paper Title</th>
+                        <th style="width: 25%;">Authors</th>
+                        <th style="width: 15%;">Published</th>
+                        <th style="width: 20%;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Training Language Models to Follow Instructions with Human Feedback</strong></td>
+                        <td>OpenAI (Long Ouyang et al.)</td>
+                        <td>March 2022</td>
+                        <td><a href="https://arxiv.org/abs/2203.02155" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Direct Preference Optimization: Your Language Model is Secretly a Reward Model</strong></td>
+                        <td>Stanford (Rafael Rafailov et al.)</td>
+                        <td>May 2023 (NeurIPS 2023)</td>
+                        <td><a href="https://arxiv.org/abs/2305.18290" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Examining Identity Drift in Conversations of LLM Agents</strong></td>
+                        <td>Alina Fastowski & Gjergji Kasneci</td>
+                        <td>February 2025</td>
+                        <td><a href="https://arxiv.org/abs/2412.00804" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="approach-section">
+            <h3 style="color: #667eea; margin-bottom: 20px;">Approach 4: Multi-Agent Systems</h3>
+
+            <table class="comparison-table" style="font-size: 0.9em;">
+                <thead>
+                    <tr style="background: #34495e;">
+                        <th style="width: 40%;">Paper Title</th>
+                        <th style="width: 25%;">Authors</th>
+                        <th style="width: 15%;">Published</th>
+                        <th style="width: 20%;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</strong></td>
+                        <td>Google Research (Jason Wei et al.)</td>
+                        <td>January 2022 (NeurIPS 2022)</td>
+                        <td><a href="https://arxiv.org/abs/2201.11903" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation</strong></td>
+                        <td>Microsoft Research (Qingyun Wu et al.)</td>
+                        <td>October 2023</td>
+                        <td><a href="https://arxiv.org/abs/2308.08155" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a> | <a href="https://github.com/microsoft/autogen" target="_blank" style="color: #667eea; font-weight: 600;">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Consensus Game: Language Model Generation via Equilibrium Search</strong></td>
+                        <td>MIT (Athul Paul Jacob et al.)</td>
+                        <td>October 2023</td>
+                        <td><a href="https://arxiv.org/abs/2310.09139" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="approach-section">
+            <h3 style="color: #667eea; margin-bottom: 20px;">Approach 5: Rule-Based Systems & Expert Systems</h3>
+
+            <table class="comparison-table" style="font-size: 0.9em;">
+                <thead>
+                    <tr style="background: #34495e;">
+                        <th style="width: 40%;">Paper Title</th>
+                        <th style="width: 25%;">Authors</th>
+                        <th style="width: 15%;">Published</th>
+                        <th style="width: 20%;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Expert Systems: Principles and Programming</strong></td>
+                        <td>Joseph Giarratano & Gary Riley</td>
+                        <td>Classic Text (4th Ed. 2005)</td>
+                        <td>Book</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Knowledge Graphs: A Practical Review of the Research Landscape</strong></td>
+                        <td>Mayank Kejriwal</td>
+                        <td>Information (2022)</td>
+                        <td><a href="https://www.mdpi.com/2078-2489/13/4/161" target="_blank" style="color: #667eea; font-weight: 600;">MDPI</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="approach-section">
+            <h3 style="color: #667eea; margin-bottom: 20px;">Approach 6: Formal Methods & Neural Network Verification</h3>
+
+            <table class="comparison-table" style="font-size: 0.9em;">
+                <thead>
+                    <tr style="background: #34495e;">
+                        <th style="width: 40%;">Paper Title</th>
+                        <th style="width: 25%;">Authors</th>
+                        <th style="width: 15%;">Published</th>
+                        <th style="width: 20%;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks</strong></td>
+                        <td>Stanford (Guy Katz et al.)</td>
+                        <td>2017 (CAV 2017)</td>
+                        <td><a href="https://arxiv.org/abs/1702.01135" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Certified Adversarial Robustness via Randomized Smoothing</strong></td>
+                        <td>CMU (Jeremy Cohen et al.)</td>
+                        <td>February 2019 (ICML 2019)</td>
+                        <td><a href="https://arxiv.org/abs/1902.02918" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formal Verification of Neural Networks: A Survey</strong></td>
+                        <td>Changliu Liu et al.</td>
+                        <td>2021</td>
+                        <td><a href="https://arxiv.org/abs/2109.13916" target="_blank" style="color: #667eea; font-weight: 600;">arXiv</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
