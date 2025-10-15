@@ -1,0 +1,5 @@
+# DriftLock AI - Stealth Mode
+# Block all search engines from indexing
+
+User-agent: *
+Disallow: /
