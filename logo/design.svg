@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   sodipodi:docname="design.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.2132695"
+     inkscape:cx="199.02682"
+     inkscape:cy="160.84801"
+     inkscape:window-width="1176"
+     inkscape:window-height="667"
+     inkscape:window-x="144"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,4.5796732,0,1 @ F,0,0,1,0,4.1578824,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:#984ae8;stroke-width:1.85208;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="9.9130983"
+       height="24.981184"
+       x="13.245726"
+       y="30.550812"
+       ry="5.93085"
+       rx="0" />
+    <path
+       style="fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:#984ae8;stroke-width:1.85208;stroke-dasharray:none;stroke-opacity:1"
+       d="m 26.962279,32.637191 8.776926,-0.182938 a 4.4596499,4.4596499 44.566675 0 1 4.55251,4.484164 l -0.07066,12.366166 a 4.1817094,4.1817094 135.1637 0 1 -4.181641,4.157815 l -8.92236,0"
+       id="path1"
+       sodipodi:nodetypes="cccc"
+       inkscape:path-effect="#path-effect1"
+       inkscape:original-d="M 26.962279,32.637191 40.317884,32.358819 40.197293,53.462398 H 27.117051" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.20625px;font-family:Avenir;-inkscape-font-specification:Avenir;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:32.559;fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:#984ae8;stroke-width:0.517187;stroke-dasharray:none;stroke-opacity:1"
+       x="54.331478"
+       y="35.192249"
+       id="text1"
+       transform="scale(0.88784164,1.126327)"><tspan
+         x="54.331478"
+         y="35.192249"
+         id="tspan3"><tspan
+           style="stroke:#1c1678"
+           id="tspan2">Driftlock.ai</tspan></tspan></text>
+  </g>
+</svg>
